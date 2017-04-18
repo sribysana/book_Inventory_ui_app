@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 
 import App from './components/App';
 import HomePage from './components/HomePage';
-import BookContainer from './components/book/BookContainer';
+import BookContainer from './components/book/BookPageContainer';
 import bookDetailPageContainer from './components/bookDetail/bookDetailPageContainer';
 import AuthorPageContainer from './components/author/AuthorPageContainer';
 import authorDetailPageContainer from './components/authorDetail/authorDetailPageContainer';
