@@ -4,7 +4,7 @@ import {Modal} from 'react-bootstrap';
 import {getBook, toggleModal, toggleBookEditModal } from './bookActions';
 import {getUser, addToCart, removeFromCart} from '../../common/user/userActions';
 import Book from './components/Book';
-import  BookForm from './components/BookForm';
+import  BookForm from './components/BookEditForm/BookForm';
 
 
 export default class BookPage extends Component {
@@ -102,9 +102,4 @@ BookPage.propTypes = {
 };
 
 
-echo "# book_Inventory_data_app" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/sribysana/book_Inventory_data_app.git
-  git push -u origin master
+// 71ee71d863fd18c963409bd2f6b644126bc99819
