@@ -16,6 +16,13 @@ export function editBookDetail(editBook) {
   }
 }
 
+export function UpdateBookList(bookList) {
+  return {
+    type: CONSTANTS.UPDATEBOOKLIST,
+    bookList,
+  }
+}
+
 export function toggleBookEditModal(editModalEnabled) {
   return {
     type: CONSTANTS.TOGGLE_BOOK_EDITMODAL,
@@ -24,7 +31,6 @@ export function toggleBookEditModal(editModalEnabled) {
 }
 
 export function getBook(id, toDispatch) {
-
   let uri = 'http://localhost:2020/books';
 
   if (Array.isArray(id)) {
@@ -44,7 +50,7 @@ export function getBook(id, toDispatch) {
           if (!toDispatch) {
             dispatch(updateBook(res.data));
           } else {
-            dispatch(editBookDetail(res.data));
+            dispatch(editBookDetail(res.data.book));
           }
         }
       })
@@ -54,9 +60,39 @@ export function getBook(id, toDispatch) {
   };
 }
 
+export function getBookList(str) {
+  let uri = "http://localhost:2020/booksList/";
+
+  return (dispatch) => {
+    fetch(uri + str)
+      .then((res) => {
+        res.json()
+      })
+      .then((res) => {
+        if (res.success) {
+          dispatch(UpdateBookList(res.data.bookList));
+        }
+      })
+  }
+}
+
 export function toggleModal(enabled) {
+
   return {
     type: 'TOGGLE_MODAL',
     enabled,
   }
+}
+
+export function addBook(book) {
+  const uri = 'http://localhost:2020/book';
+  return (dispatch) => {
+    fetch(uri)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success) {
+          dispatch(updateBook(res.data))
+        }
+      })
+  };
 }

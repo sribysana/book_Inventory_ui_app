@@ -1,14 +1,17 @@
 import * as CONSTATS from '../../constants/actionTypes';
 import {fromJS} from 'immutable';
+//import bookTemplet from './components/book';
+
 const defaultState = fromJS({
   book: [],
   cart: [],
   editBook:{},
+  bookList:[],
   editModalEnabled: false,
   isModalEnabled: false,
 });
 
-export default function bookReducer(state = defaultState, action) {
+export default function bookPageReducer(state = defaultState, action) {
   let newState = state;
 
   switch (action.type) {
@@ -23,6 +26,9 @@ export default function bookReducer(state = defaultState, action) {
       break;
     case CONSTATS.TOGGLE_BOOK_EDITMODAL:
       newState = newState.set('editModalEnabled', action.editModalEnabled);
+      break;
+    case CONSTATS.UPDATEBOOKLIST:
+      newState = newState.set('bookList', fromJS(action.bookList))
       break;
     default:
   }

@@ -3,7 +3,7 @@ import BookDetailPage from './BookDetailPage';
 function mapStateToProps(state){
   const id = state.routing.locationBeforeTransitions.pathname;
   return{
-    book:state.bookReducer.get('book'),
+    book:state.bookPageReducer.get('book'),
     cart:state.userReducer.get('cart'),
     id:id.split('/')[2],
   };

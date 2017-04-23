@@ -8,6 +8,14 @@ export function updateAuthor(data) {
   };
 }
 
+export function updateAuthorList(authorList) {
+  return {
+    type: CONSTANTS.UPDATE_AUTHOR_List,
+    authorList,
+  }
+}
+
+
 export function getAuthor(id) {
   return (dispatch) => {
     let uri = 'http://localhost:2020/authors';
@@ -25,3 +33,16 @@ export function getAuthor(id) {
   };
 }
 
+
+export function getAuthorList() {
+  return (dispatch) => {
+    const uri = 'http://localhost:2020/authorList';
+    fetch(uri)
+      .then((res) => res.json())
+      .then((res)=>{
+        if(res.success){
+          dispatch(updateAuthorList(res.data.authorList))
+        }
+      })
+  }
+}

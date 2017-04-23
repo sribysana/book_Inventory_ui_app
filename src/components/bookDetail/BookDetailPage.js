@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { List } from 'immutable';
 import { getBook } from '../book/bookActions';
 import { getUser, addToCart,removeFromCart } from '../../common/user/userActions';
-import Book from '../book/components/Book';
+import Book from '../book/components/book';
 
 export default class BookDetailPage extends Component {
   constructor(props) {

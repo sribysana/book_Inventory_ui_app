@@ -2,12 +2,12 @@ import {connect} from 'react-redux';
 import BookPage from './BookPage';
 function mapStateToProps(state){
   return{
-    books:state.bookReducer.get('book'),
+    books:state.bookPageReducer.get('book'),
     cart:state.userReducer.get('cart'),
-    editBook:state.bookReducer.get('editBook'),
-    isModalEnabled: state.bookReducer.get('isModalEnabled'),
-    editModalEnabled: state.bookReducer.get('editModalEnabled'),
-    //id:state
+    editBook:state.bookPageReducer.get('editBook'),
+    authorList:state.authorReducer.get('authorList'),
+    isModalEnabled: state.bookPageReducer.get('isModalEnabled'),
+    editModalEnabled: state.bookPageReducer.get('editModalEnabled'),
   };
 }
 function mapDispatchToProps(dispatch){

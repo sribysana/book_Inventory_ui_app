@@ -8,9 +8,11 @@ export const USER = {
 /* user actions */
 export const UPDATE_USER = 'UPDATE_USER';
 export const TOGGLE_BOOK_EDITMODAL = 'TOGGLEBOOKEDITMODALENABLED';
-export  const EDIT_BOOK = 'EDIT_BOOK';
+export const EDIT_BOOK = 'EDIT_BOOK';
 /* Book actions */
 export const UPDATE_BOOK = 'UPDATE_BOOK';
+export const UPDATEBOOKLIST = UPDATEBOOKLIST;
 
 /* Author actions */
 export const UPDATE_AUTHOR = 'UPDATE_AUTHOR';
+export const UPDATE_AUTHOR_List = 'UPDATE_AUTHOR_List';
